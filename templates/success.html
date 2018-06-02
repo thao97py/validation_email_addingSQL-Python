@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static', filename='style_sheet2.css')}}">
+    <title>Success Page</title>
+</head>
+<body>
+    
+    <div class="display">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages: %}
+        <p>{{ message }} </p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    
+    <div class="content">
+        <h1>Email Addresses Entered:</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Email</th>
+                    <th>Date Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for email in all_email %}
+                <tr>
+                    <td>{{ email['id'] }}</td>
+                    <td>{{ email['email'] }}</td>
+                    <td>{{ email['created_at'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+        
+        <form class='delete' action='/deleting' method='post'>
+            <h4>Enter the Index of the Email You Would Like to Delete</h4>
+            <label for="index">Index:<input id="index" name="index" type="text"></label>
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+</body>
+</html>

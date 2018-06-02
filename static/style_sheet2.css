@@ -1,0 +1,32 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.display p{
+    width:70%;
+    color: white;
+    margin-left:10%;
+    border:2px solid #000000;
+    text-align: center;
+    font-size: 30px;
+    background: rgb(33, 123, 33);
+}
+h1{
+    text-decoration: underline;
+}
+th,td{
+    border:1px solid black;
+    height: 10%;
+}
+table{
+    width:60%;
+    margin-left:5%;
+}
+form{
+    width:50%;
+    background: rgb(133, 218, 133);
+    margin: 5% 10%;
+    padding: 2%;
+}
+label input{
+    width:10%;
+}
